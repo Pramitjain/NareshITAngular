@@ -1,0 +1,32 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # आपकी इमेज के अनुसार main ब्रांच का उपयोग कर रहे हैं
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21' # आपके प्रोजेक्ट के अनुसार version बदल सकते हैं
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build -- --configuration production --base-href /NareshITAngular/
+        # ध्यान दें: YOUR_REPO_NAME को अपने GitHub प्रोजेक्ट के नाम से बदलें
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/NareshITAngular/browser # Angular 17+ के लिए path चेक करें
+          branch: gh-pages # यह Action इस ब्रांच पर कोड डिप्लॉय करेगा 
