@@ -1,0 +1,20 @@
+/* Sidebar should take full height and not scroll */
+#sidebarMenu {
+    height: calc(100vh - 48px); /* Adjust 48px based on your navbar height */
+    position: fixed;
+    top: 48px; /* Same as navbar height */
+    left: 0;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: auto; /* Only scrolls if menu items exceed height */
+  }
+  
+  /* Ensure the main content doesn't hide behind the fixed sidebar */
+  main {
+    padding-top: 20px;
+  }
+  
+  /* Fix for the main layout row to prevent horizontal scrolling */
+  .row.g-0 {
+    overflow-x: hidden;
+  }

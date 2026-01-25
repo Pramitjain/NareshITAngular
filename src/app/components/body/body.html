@@ -1,0 +1,12 @@
+<main class="main-container my-5" style="margin-top:1%;">
+    <aside *ngIf="isLoggedIn">
+        <app-left-panel style="margin-left:2%;"></app-left-panel>
+    </aside>
+
+    <section class="content-area myMain">
+        <div class="container">
+
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+</main>
