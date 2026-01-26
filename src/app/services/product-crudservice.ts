@@ -32,7 +32,7 @@ export class ProductCRUDService {
   }
 
   searchProduct(term: string) {
-    return this.httpcalls.get<any>(`${this.baseUrl}SearchProducts?searchText=${term}`, { headers: this.headers });
+    return this.httpcalls.get<any>(`${this.baseUrl}product/SearchProducts?searchText=${term}`, { headers: this.headers });
   }
 
 }

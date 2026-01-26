@@ -1,27 +1,33 @@
-<div class="bg-dark vw-100 vh-100 d-flex justify-content-center align-items-center">
+<div class="d-flex justify-content-center align-items-center bg-gradient-custom">
   
-  <div class="card shadow-lg border-0" style="max-width: 400px; width: 100%; border-radius: 15px;">
-    <div class="card-body p-5">
+  <div class="card shadow-lg border-0 login-card">
+    <div class="card-body p-4 p-md-5">
       
       <div class="text-center mb-4">
-        <h2 class="fw-bold text-primary">Welcome Back</h2>
-        <p class="text-muted">Please login to your account</p>
+        <div class="login-icon mb-3">
+          <i class="bi bi-person-circle display-4 text-primary"></i>
+        </div>
+        <h2 class="fw-bold text-dark">Welcome Back</h2>
+        <p class="text-muted">Securely login to your account</p>
       </div>
 
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
+        
         <div class="form-floating mb-3">
           <input 
             type="text" 
             class="form-control" 
             id="floatingEmail"
             formControlName="userName" 
-            placeholder="userName"
+            placeholder="User Name"
             [class.is-invalid]="loginForm.get('userName')?.touched && loginForm.get('userName')?.invalid">
-          <label for="floatingEmail">User Name</label>
-          <div class="invalid-feedback">Please enter a valid User Name.</div>
+          <label for="floatingEmail"><i class="bi bi-person me-2"></i>User Name</label>
+          <div class="invalid-feedback animate__animated animate__fadeIn">
+            User Name is required.
+          </div>
         </div>
 
-        <div class="form-floating mb-4">
+        <div class="form-floating mb-3">
           <input 
             type="password" 
             class="form-control" 
@@ -29,19 +35,25 @@
             formControlName="password" 
             placeholder="Password"
             [class.is-invalid]="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
-          <label for="floatingPassword">Password</label>
-          <div class="invalid-feedback">Password must be at least 6 characters.</div>
+          <label for="floatingPassword"><i class="bi bi-lock me-2"></i>Password</label>
+          <div class="invalid-feedback animate__animated animate__fadeIn">
+            Password is too short.
+          </div>
+        </div>
+
+        <div class="text-end mb-4">
+          <a href="#" class="text-decoration-none small text-primary fw-semibold">Forgot password?</a>
         </div>
 
         <button 
-          class="btn btn-primary w-100 py-3 fw-bold shadow-sm" 
+          class="btn btn-primary w-100 py-3 fw-bold shadow-sm login-btn" 
           type="submit" 
           [disabled]="loginForm.invalid">
-          Login-1
+          SIGN IN
         </button>
 
-        <div class="text-center mt-3">
-          <a href="#" class="text-decoration-none small">Forgot password?</a>
+        <div class="text-center mt-4">
+          <p class="small text-muted">Don't have an account? <a href="#" class="text-primary fw-bold text-decoration-none">Sign Up</a></p>
         </div>
       </form>
 
