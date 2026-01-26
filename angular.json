@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "angular5": {
+    "NareshITAngular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular5:build:production"
+              "buildTarget": "NareshITAngular:build:production"
             },
             "development": {
-              "buildTarget": "angular5:build:development"
+              "buildTarget": "NareshITAngular:build:development"
             }
           },
           "defaultConfiguration": "development"

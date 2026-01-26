@@ -11,5 +11,5 @@ import { Body } from './components/body/body';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('angular5');
+  protected readonly title = signal('NareshITAngular');
 }
