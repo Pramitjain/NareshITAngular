@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '21' # आपके प्रोजेक्ट के अनुसार version बदल सकते हैं
+          node-version: '20' # आपके प्रोजेक्ट के अनुसार version बदल सकते हैं
 
       - name: Install Dependencies
         run: npm install
